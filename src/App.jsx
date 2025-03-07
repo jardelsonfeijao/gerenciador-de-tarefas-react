@@ -12,21 +12,25 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  /*  Testando integração de API
   useEffect(() => {
     const fetchTasks = async () => {
-      // CHAMAR A API
+      CHAMAR A API
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/todos?_limit=10",
         {
           method: "GET",
         }
       );
+      PEGAR OS DADOS QUE ELA RETORNA
       const data = await response.json();
-      // PEGAR OS DADOS QUE ELA RETORNA
-      // ARMAZENAR / PERSISTIR ESSES DADOS NO STATE
+
+      ARMAZENAR / PERSISTIR ESSES DADOS NO STATE
+      setTasks(data);
     };
     fetchTasks();
   }, []);
+  */
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
